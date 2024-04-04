@@ -1,2 +1,11 @@
+import fastify from "fastify"
 
-console.log("Start the server")
+const app = fastify()
+
+app.get("/", () => {
+    return "Hello "
+})
+
+app.listen({ port: 3333 }).then(() => {
+    console.log("HTTP server running")
+})
