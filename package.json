@@ -4,7 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "tsx watch --env-file .env src/server.ts"
+        "dev": "tsx watch --env-file .env src/server.ts",
+        "build": "tsup src --format esm",
+        "start": "node dist/server.mjs",
+        "db:migrate": "prisma migrate dev",
+        "db:studio": "prisma studio"
     },
     "keywords": [],
     "author": "",
@@ -13,8 +17,11 @@
         "seed": "tsx prisma/seed.ts"
     },
     "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
         "@types/node": "^20.12.4",
+        "dayjs": "^1.11.10",
         "prisma": "^5.12.1",
+        "tsup": "^8.0.2",
         "tsx": "^4.7.2",
         "typescript": "^5.4.4"
     },
